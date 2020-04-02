@@ -18,12 +18,10 @@ class ConfirmDeleteModal extends Component {
     }))
   }
   
-  deleteJoke = pk => {
-    axios.delete(JOKES_API_URL + pk)
-      .then( () => {
-        this.props.getJokes()
-        this.toggle()
-      })
+  deleteJoke = async pk => {
+    await this.props.jokeService.deleteJoke(pk)
+    this.props.getJokes()
+    this.toggle()
   }
   
   render() {

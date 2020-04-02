@@ -4,37 +4,31 @@ import JokeList from "./JokeList"
 import JokeModal from "./JokeModal"
 import Prompt from "./Prompt"
 
-import axios from "axios"
-
-import { JOKES_API_URL, RANDOM_PROMPT_API_URL } from "../constants"
-
 class Home extends Component {
   state = {
     jokes: [],
     prompt: "",
   }
   
-  componentDidMount() {
-    this.getJokes()
-    this.getPrompt()
-  }
-
-  getJokes = () => {
-    axios.get(JOKES_API_URL)
-      .then( response =>
-        this.setState({
-          jokes: response.data
-        })
-      )
+  async componentDidMount() {
+    await this.getPrompt()
+    await this.getJokes()
   }
   
-  getPrompt = () => {
-    axios.get(RANDOM_PROMPT_API_URL)
-      .then( response =>
-        this.setState({
-          prompt: response.data.text,
-        })
-      )
+  getPrompt = async () => {
+    const prompt = await this.props.promptService.getPrompt()
+    
+    this.setState({
+      prompt,
+    })
+  }
+  
+  getJokes = async () => {
+    const jokes = await this.props.jokeService.getJokes()
+    
+    this.setState({
+      jokes,
+    })
   }
   
   render() {
@@ -53,6 +47,7 @@ class Home extends Component {
             <JokeList
               jokes={this.state.jokes}
               getJokes={this.getJokes}
+              jokeService={this.props.jokeService}
             />
           </Col>
         </Row>
@@ -63,6 +58,7 @@ class Home extends Component {
               prompt={this.state.prompt}
               create={true}
               getJokes={this.getJokes}
+              jokeService={this.props.jokeService}
             />
           </Col>
         </Row>

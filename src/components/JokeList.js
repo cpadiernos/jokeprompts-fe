@@ -34,11 +34,13 @@ class JokeList extends Component {
                     create={false}
                     joke={joke}
                     getJokes={this.props.getJokes}
+                    jokeService={this.props.jokeService}
                   />
                   &nbsp;&nbsp;
                   <ConfirmDeleteModal
                     pk={joke.pk}
                     getJokes={this.props.getJokes}
+                    jokeService={this.props.jokeService}
                   />
                 </td>
               </tr>

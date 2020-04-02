@@ -19,7 +19,7 @@ class JokeModal extends Component {
     const create = this.props.create
     
     var title = "Edit Joke"
-  var button = <Button aria-label="Edit" onClick={this.toggle}><FontAwesomeIcon icon={faEdit} /></Button>
+    var button = <Button aria-label="Edit" onClick={this.toggle}><FontAwesomeIcon icon={faEdit} /></Button>
     
     if (create) {
       title = "Create New Joke"
@@ -49,6 +49,7 @@ class JokeModal extends Component {
             <JokeForm
               prompt={this.props.prompt}
               getJokes={this.props.getJokes}
+              jokeService={this.props.jokeService}
               toggle={this.toggle}
               joke={this.props.joke}
             />

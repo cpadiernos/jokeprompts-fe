@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Home/>
+        <Home jokeService={this.props.jokeService} promptService={this.props.promptService}/>
       </Fragment>
     )
   }

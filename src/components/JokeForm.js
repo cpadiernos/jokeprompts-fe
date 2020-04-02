@@ -1,10 +1,6 @@
 import React from "react"
 import { Button, Form, FormGroup, Input, Label } from "reactstrap"
 
-import axios from "axios"
-
-import { JOKES_API_URL } from "../constants"
-
 class JokeForm extends React.Component {
   state = {
     pk: 0,
@@ -30,37 +26,44 @@ class JokeForm extends React.Component {
     })
   }
   
-  createJoke = event => {
+  createJoke = async event => {
     event.preventDefault()
-    axios.post(JOKES_API_URL, this.state)
-      .then( () => {
-        this.props.getJokes()
-        this.props.toggle()
-      })
-      .catch(error => {
-        if (error.response) {
-          this.setState({
-            errorMessagePrompt: error.response.data.prompt,
-            errorMessageText: error.response.data.text,
-          })
-        }
-      })
+    try {
+      await this.props.jokeService.createJoke(this.state)
+      this.props.getJokes()
+      this.props.toggle()
+    } catch(error) {
+      if (error.response) {
+        this.setState({
+          errorMessagePrompt: error.response.data.prompt,
+          errorMessageText: error.response.data.text,
+        })
+      }
+    }
   }
   
-  editJoke = event => {
+  editJoke = async event => {
     event.preventDefault()
-    axios.put(JOKES_API_URL + this.state.pk, this.state)
-      .then( () => {
-        this.props.getJokes()
-        this.props.toggle()
-      })
+    try {
+      await this.props.jokeService.editJoke(this.state.pk, this.state)
+      this.props.getJokes()
+      this.props.toggle()
+    } catch(error) {
+      if (error.response) {
+        this.setState({
+          errorMessagePrompt: error.response.data.prompt,
+          errorMessageText: error.response.data.text,
+        })
+      }
+    }
   }
   
   defaultIfEmpty = value => {
     return value === "" ? "" : value;
   }
-  
+
   render() {
+
     return (
       <Form onSubmit={this.props.joke ? this.editJoke : this.createJoke}>
         <FormGroup>
