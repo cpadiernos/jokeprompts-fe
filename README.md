@@ -34,12 +34,12 @@ To run the project on your local machine:
 
 1. Clone the repository:
 ```
-git clone https://github.com/cpadiernos/jokeprompst-fe.git
+git clone https://github.com/cpadiernos/jokeprompts-fe.git
 ```
 
-2. Go into jokeprompst-fe folder:
+2. Go into jokeprompts-fe folder:
 ```
-cd jokeprompst-fe
+cd jokeprompts-fe
 ```
 
 3. Start the project:
