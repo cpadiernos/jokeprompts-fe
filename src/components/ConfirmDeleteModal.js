@@ -3,10 +3,6 @@ import { Modal, ModalHeader, Button, ModalFooter } from "reactstrap"
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import axios from "axios"
-
-import { JOKES_API_URL } from "../constants"
-
 class ConfirmDeleteModal extends Component {
   state = {
     modal: false
@@ -40,12 +36,14 @@ class ConfirmDeleteModal extends Component {
           </ModalHeader>
           <ModalFooter>
             <Button
+              aria-label="Cancel"
               type="button"
               onClick={() => this.toggle()}
             >
               Cancel
             </Button>
             <Button
+              aria-label="Confirm delete"
               type="button"
               color="danger"
               onClick={() => this.deleteJoke(this.props.pk)}

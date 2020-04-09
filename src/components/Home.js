@@ -17,7 +17,6 @@ class Home extends Component {
   
   getPrompt = async () => {
     const prompt = await this.props.promptService.getPrompt()
-    
     this.setState({
       prompt,
     })
@@ -25,7 +24,6 @@ class Home extends Component {
   
   getJokes = async () => {
     const jokes = await this.props.jokeService.getJokes()
-    
     this.setState({
       jokes,
     })

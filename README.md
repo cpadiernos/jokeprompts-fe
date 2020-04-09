@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Joke Prompts - web application (frontend)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [General Info](#general-info)
+* [Screenshot](#screenshot)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Project Status](#project-status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-### `npm start`
+## General Info
+This is the React frontend for the joke prompts site.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The repo for the backend can be found at: [https://github.com/cpadiernos/jokeprompts-be](https://github.com/cpadiernos/jokeprompts-be)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Taken together it is a web application that allows users to get a random prompt and to write, save, edit, and delete jokes.
 
-### `npm test`
+## Screenshot
+![Joke Prompts Home](./images/jokeprompts-home.jpg)
+![Joke Prompts Create](./images/jokeprompts-create.jpg)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+* JavaScript
+* React 16.13.1
+* reactstrap 8.4.1
+* Jest
+* React Testing Library
 
-### `npm run build`
+## Setup
+To run the project on your local machine:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+```
+git clone https://github.com/cpadiernos/jokeprompst-fe.git
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. Go into jokeprompst-fe folder:
+```
+cd jokeprompst-fe
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the project:
+```
+npm start
+```
 
-### `npm run eject`
+4. A broswer window will open. If not, navigate to http://localhost:3000, and you'll see the project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Demo: Coming soon...
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
+* Generate a random prompt
+* Save, edit, delete jokes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To-dos:
+* Create login to save your own jokes
+* Add way to rate how your joke did when tested out in front of an audience
+* ...
 
-## Learn More
+## Project Status
+Integration tests are all passing. 100% coverage.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Inspiration
+I used to do stand up comedy and you need to be writing jokes daily. I made this app to help with creating jokes!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contact
+Created by [@cpadiernos](https://www.linkedin.com/in/carolpadiernos/). Feel free to reach out!

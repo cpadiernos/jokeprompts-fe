@@ -26,6 +26,7 @@ class JokeModal extends Component {
       
       button = (
         <Button
+          aria-label="Create"
           color="primary"
           className="float-right"
           onClick={this.toggle}

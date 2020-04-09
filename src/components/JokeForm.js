@@ -68,10 +68,11 @@ class JokeForm extends React.Component {
       <Form onSubmit={this.props.joke ? this.editJoke : this.createJoke}>
         <FormGroup>
           <Label for="prompt">Prompt:</Label>
-          <p className="text-danger">
+          <p data-testid="prompt-error" className="text-danger">
             {this.state.errorMessagePrompt}
           </p>
           <Input 
+            aria-label="Prompt"
             type="text"
             name="prompt"
             onChange={this.onChange}
@@ -80,17 +81,18 @@ class JokeForm extends React.Component {
         </FormGroup>
         <FormGroup>
           <Label for="text">Text:</Label>
-          <p className="text-danger">
+          <p data-testid="text-error" className="text-danger">
             {this.state.errorMessageText}
           </p>
-          <Input 
+          <Input
+            aria-label="Text"
             type="text"
             name="text"
             onChange={this.onChange}
             value={this.defaultIfEmpty(this.state.text)}
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button aria-label="Submit" type="submit">Submit</Button>
       </Form>
     )
   }

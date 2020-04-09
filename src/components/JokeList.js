@@ -7,7 +7,7 @@ import ConfirmDeleteModal from "./ConfirmDeleteModal"
 class JokeList extends Component {
   render() {
     const jokes = this.props.jokes
-    
+
     return (
       <Table>
         <thead className="thead-dark">
